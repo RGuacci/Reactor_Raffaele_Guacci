@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import routes from "../../router/routes";
 
 function GameCard({ game }) {
   return (

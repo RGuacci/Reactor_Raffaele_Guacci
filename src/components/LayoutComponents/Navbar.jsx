@@ -6,7 +6,7 @@ import routes from "../../router/routes";
 
 function Navbar() {
   return (
-    <nav className="navbar bg-nav-gray h-16 px-3 md:px-5">
+    <nav className="navbar fixed top-0 left-0 z-50 bg-nav-gray h-16 px-3 md:px-5">
       {/* Logo */}
       <div className="flex-1">
         <Link

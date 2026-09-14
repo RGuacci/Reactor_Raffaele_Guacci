@@ -13,8 +13,8 @@ function Layout() {
       <div className="drawer-content min-h-screen flex flex-col">
         <Navbar />
 
-        <main className="flex-1">
-          <section className="m-5">
+        <main className="flex-1 pt-16">
+          <section className="mb-5">
             <Outlet />
           </section>
         </main>

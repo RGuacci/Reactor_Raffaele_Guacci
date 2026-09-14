@@ -1,14 +1,13 @@
 import { useLoaderData } from "react-router";
 import GameList from "../components/HomeComponents/GameList";
+import HeaderHome from '../components/HomeComponents/HeaderHome';
 
 function Homepage() {
   const games = useLoaderData();
 
   return (
     <>
-      <h1 className="font-electro text-center font-bold text-5xl my-10">
-        Reactor
-      </h1>
+      <HeaderHome games={games}/>
 
       <GameList>
         {games.map((game) => {
