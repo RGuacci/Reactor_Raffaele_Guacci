@@ -32,7 +32,7 @@ function DetailsPage() {
       </div>
       <Header game={game} />
 
-      {profile && <BodySection game={game} profile_id={profile.id}/>}
+     <BodySection game={game} profile_id={profile?.id}/>
     </main>
   );
 }
