@@ -1,5 +1,5 @@
 import SearchBar from "../NavbarComponents/SearchBar";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate ,useLocation } from "react-router";
 import routes from "../../router/routes";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
@@ -8,6 +8,7 @@ import { supabase } from "../../database/supabase";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { user, signOut, profile } = useContext(UserContext);
   const [avatarUrl, setAvatarUrl] = useState();
@@ -70,12 +71,16 @@ function Navbar() {
           <ul
             tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
+          > 
+           
+            {/* Condizione per nacondere il link al profilo dalla pagina profilo */}
             {user ? (
               <>
-                <li>
+               { location.pathname !== routes.profile && (
+                 <li>
                   <Link to={routes.profile}>Profilo</Link>
                 </li>
+               ) }
 
                 <li>
                   <button onClick={handleLogout}>Logout</button>
