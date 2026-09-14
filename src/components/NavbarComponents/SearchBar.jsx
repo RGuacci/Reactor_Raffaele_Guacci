@@ -11,17 +11,49 @@ function SearchBar() {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Cerca"
-        className="input w-24 md:w-auto"
-        onChange={handleChange}
-      />
-      
-      {/* Ho aggiunto questa condizione per impedire la ricerca ad un utente che non ha scritto nulla nella searchbar */}
-      <Link className="btn btn-square" to={ slug ? `search/${slug}` : `#` }>
-        <FaSearch />
-      </Link>
+      {/* Pulsante ricerca */}
+      <button
+        className="btn btn-square btn-ghost"
+        onClick={() =>
+          document.getElementById("search_modal").showModal()
+        }
+      >
+        <FaSearch className="text-xl"/>
+      </button>
+
+      {/* Modale */}
+      <dialog id="search_modal" className="modal">
+        <div className="modal-box">
+
+          <h3 className="font-bold text-lg mb-4">
+            Cerca un videogioco
+          </h3>
+
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="Cerca..."
+              className="input w-full"
+              onChange={handleChange}
+            />
+
+            <Link
+              className="btn"
+              to={ slug ? `search/${slug}` : "#" }
+              onClick={() =>
+                document.getElementById("search_modal").close()
+              }
+            >
+              Cerca
+            </Link>
+          </div>
+
+        </div>
+
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </>
   );
 }

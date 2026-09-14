@@ -2,24 +2,35 @@ import { Outlet, useLoaderData } from "react-router";
 import Navbar from "../LayoutComponents/Navbar";
 import Footer from "../LayoutComponents/Footer";
 import SideBar from "../LayoutComponents/SideBar";
+
 function Layout() {
   const genres = useLoaderData();
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <div className="drawer">
+      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
 
-      <main className="flex-1 grid grid-cols-1 lg:grid-cols-8 gap-4">
-        <aside className="lg:col-span-2 bg-nav-gray">
-          <SideBar genres={genres} />
-        </aside>
+      <div className="drawer-content min-h-screen flex flex-col">
+        <Navbar />
 
-        <section className="lg:col-span-6 m-5">
-          <Outlet />
-        </section>
-      </main>
+        <main className="flex-1">
+          <section className="m-5">
+            <Outlet />
+          </section>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
+
+      <div className="drawer-side">
+        <label
+          htmlFor="my-drawer"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        />
+
+        <SideBar genres={genres} />
+      </div>
     </div>
   );
 }
