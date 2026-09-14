@@ -10,6 +10,8 @@ function Profile() {
 
   const [avatarUrl, setAvatarUrl] = useState();
 
+  const [userFavourites, setUserFavourites] = useState();
+
   const downloadAvatar = async () => {
     if (profile && profile.avatar_url) {
       const { data, error } = await supabase.storage
@@ -20,8 +22,19 @@ function Profile() {
     }
   };
 
+  const getFavourites = async () => {
+    if (profile) {
+      let { data: favourites, error } = await supabase
+        .from("favourites")
+        .select("*")
+        .eq("profile_id", profile.id);
+      setUserFavourites(favourites);
+    }
+  };
+
   useEffect(() => {
     downloadAvatar();
+    getFavourites();
   }, [profile]);
 
   return (
@@ -65,6 +78,18 @@ function Profile() {
                 Impostazioni
               </Link>
             </article>
+          </section>
+
+          <section className="max-w-6xl mx-auto mt-10 my-10">
+            <h2 className="text-2xl font-bold mb-5 text-center">I tuoi preferiti</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {userFavourites?.map((game) => (
+                <div className="bg-base-300 rounded-box p-5" key={game.id}>
+                  <h3 className="text-lg font-bold">{game.game_name}</h3>
+                </div>
+              ))}
+            </div>
           </section>
         </div>
       )}
