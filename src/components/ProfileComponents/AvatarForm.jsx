@@ -41,22 +41,28 @@ function AvatarForm() {
   };
 
   return (
-    <>
-      <form
-        className="bg-nav-gray border-base-300 rounded-box w-xs border p-4"
-        onSubmit={handleAvatar}
-      >
-        <input
-          type="file"
-          className="file-input file-input-lg w-full mb-5"
-          onChange={handleChange}
+    <form
+      className="bg-base-300 rounded-box p-6 md:p-8 w-full sm:w-80 min-h-100"
+      onSubmit={handleAvatar}
+    >
+      <h2 className="font-bold text-xl mb-5">Immagine profilo</h2>
+
+      {preview && (
+        <img
+          src={preview}
+          alt="Anteprima avatar"
+          className="w-40 h-40 object-cover rounded-full mx-auto mb-5"
         />
+      )}
 
-        <button className="btn btn-neutral mt-4">Carica Avatar</button>
-      </form>
+      <input
+        type="file"
+        className="file-input file-input-lg w-full mb-5"
+        onChange={handleChange}
+      />
 
-      <img src={preview} className="w-50" />
-    </>
+      <button className="btn btn-primary mt-4 w-full">Carica Avatar</button>
+    </form>
   );
 }
 

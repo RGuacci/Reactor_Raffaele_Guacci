@@ -51,7 +51,7 @@ function Profile() {
             <h2 className="text-2xl font-bold mt-5">{profile.first_name}</h2>
           </article>
 
-          <section className="max-w-xl mx-auto">
+          <section className="max-w-2xl mx-auto">
             <article className="bg-base-300 rounded-box p-6 md:p-8">
               <h3 className="font-bold text-xl mb-5">I Tuoi Dati</h3>
 
@@ -81,12 +81,19 @@ function Profile() {
           </section>
 
           <section className="max-w-6xl mx-auto mt-10 my-10">
-            <h2 className="text-2xl font-bold mb-5 text-center">I tuoi preferiti</h2>
+            <h2 className="text-2xl font-bold mb-5 text-center">
+              I tuoi preferiti
+            </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {userFavourites?.map((game) => (
-                <div className="bg-base-300 rounded-box p-5" key={game.id}>
-                  <h3 className="text-lg font-bold">{game.game_name}</h3>
+                <div
+                  className="group bg-base-300 rounded-box p-5 transition-all duration-300 hover:bg-base-200 hover:shadow-[0_0_15px_rgba(124,58,237,0.25)]"
+                  key={game.id}
+                >
+                  <h3 className="text-lg font-bold transition-colors duration-300 group-hover:text-primary">
+                    {game.game_name}
+                  </h3>
                 </div>
               ))}
             </div>

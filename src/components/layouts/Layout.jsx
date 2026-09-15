@@ -22,7 +22,7 @@ function Layout() {
         <Footer />
       </div>
 
-      <div className="drawer-side">
+      <div className="drawer-side pt-16">
         <label
           htmlFor="my-drawer"
           aria-label="close sidebar"

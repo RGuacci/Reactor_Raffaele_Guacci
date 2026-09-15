@@ -9,7 +9,7 @@ function SideBar({ genres }) {
             <li key={genre.id}>
               <Link
                 to={`/genre/${genre.slug}`}
-                className="block w-full rounded px-2 py-2 text-center hover:bg-gray-700"
+                className="block w-full rounded px-2 py-2 text-center transition-colors duration-200 hover:bg-base-300 hover:text-primary"
               >
                 {genre.name}
               </Link>

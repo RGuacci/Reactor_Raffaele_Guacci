@@ -59,14 +59,14 @@ function Reviews({ game, profile_id }) {
           </h2>
 
           <textarea
-            className="textarea w-full min-h-32"
+            className="textarea w-full min-h-32 bg-base-300 text-base-content"
             placeholder="Scrivi la tua recensione!"
             onChange={handleDescription}
             value={description}
           />
 
           <button
-            className="btn bg-nav-gray mt-4 w-full sm:w-auto"
+            className="btn btn-primary mt-4 w-full sm:w-auto"
             onClick={addReview}
           >
             Invia

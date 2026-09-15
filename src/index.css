@@ -1,11 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'taIlwindcss';
+@import 'tailwindcss';
 
-@theme{
-    --font-roboto:'Roboto', sans-serif;
-    --font-electro:'Electrolize',sans-serif;
-    --color-nav-gray: #d8d8d8;
+@theme {
+    --font-roboto: 'Roboto', sans-serif;
+    --font-electro: 'Electrolize', sans-serif;
+
+    --color-nav-gray: #181b24;
 }
-@plugin 'daisyui';
 
+@plugin 'daisyui' {
+    themes: reactor --default;
+}
+
+@plugin "daisyui/theme" {
+    name: "reactor";
+    default: true;
+
+    --color-base-100: #0f1117;
+    --color-base-200: #151820;
+    --color-base-300: #1c202a;
+
+    --color-base-content: #f5f5f5;
+
+    --color-primary: #7c3aed;
+    --color-primary-content: #ffffff;
+
+    --color-secondary: #2563eb;
+    --color-secondary-content: #ffffff;
+
+    --color-accent: #8b5cf6;
+    --color-accent-content: #ffffff;
+
+    --color-neutral: #181b24;
+    --color-neutral-content: #f5f5f5;
+}

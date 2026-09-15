@@ -3,15 +3,17 @@ import Navbar from "../LayoutComponents/Navbar";
 import Footer from "../LayoutComponents/Footer";
 
 function AuthLayout() {
+  return (
+    <>
+      <Navbar />
 
-
-    return(
-        <>
-        <Navbar />
+      <main className="pt-16">
         <Outlet />
-        <Footer />
-        </>
-    )
+      </main>
+
+      <Footer />
+    </>
+  );
 }
 
 export default AuthLayout;

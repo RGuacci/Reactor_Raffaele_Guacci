@@ -1,13 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import routes from "../../router/routes";
-import { supabase } from "../../database/supabase";
 import AvatarForm from "../../components/ProfileComponents/AvatarForm";
 
 function ProfileSettings() {
-  const { profile, getUser, updateProfile } = useContext(UserContext);
+  const { updateProfile } = useContext(UserContext);
 
   const {
     register,
@@ -33,11 +32,11 @@ function ProfileSettings() {
           <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
             {/* Dati personali */}
             <form onSubmit={handleSubmit(handleSettings)}>
-              <fieldset className="fieldset bg-nav-gray border-base-300 rounded-box w-full sm:w-80 border p-4">
+             <fieldset className="bg-base-300 rounded-box p-6 md:p-8 w-full sm:w-80 min-h-100">
                 <label className="label">Nome</label>
                 <input
                   type="text"
-                  className="input w-full"
+                 className="input w-full bg-base-100"
                   placeholder="Mario"
                   {...register("first_name", {
                     required: "Il nome è obbligatorio",
@@ -51,7 +50,7 @@ function ProfileSettings() {
                 <label className="label">Cognome</label>
                 <input
                   type="text"
-                  className="input w-full"
+                 className="input w-full bg-base-100"
                   placeholder="Rossi"
                   {...register("last_name", {
                     required: "Il cognome è obbligatorio",
@@ -65,7 +64,7 @@ function ProfileSettings() {
                 <label className="label">Username</label>
                 <input
                   type="text"
-                  className="input w-full"
+                 className="input w-full bg-base-100"
                   placeholder="Mario.Rossi"
                   {...register("username", {
                     required: "Lo username è obbligatorio",
@@ -76,7 +75,7 @@ function ProfileSettings() {
                   <p className="text-red-500">{errors.username.message}</p>
                 )}
 
-                <button className="btn btn-neutral mt-4 w-full">
+                <button className="btn btn-primary mt-4 w-full">
                   Modifica
                 </button>
               </fieldset>

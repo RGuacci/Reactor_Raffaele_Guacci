@@ -100,7 +100,7 @@ function Register() {
             <p className="text-red-500">{errors.password.message}</p>
           )}
 
-          <button className="btn btn-neutral mt-4">Registrati</button>
+          <button className="btn btn-primary mt-5">Registrati</button>
         </fieldset>
       </form>
     </main>
