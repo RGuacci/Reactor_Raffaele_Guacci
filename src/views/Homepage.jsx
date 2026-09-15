@@ -2,12 +2,13 @@ import { useLoaderData } from "react-router";
 import GameList from "../components/HomeComponents/GameList";
 import HeaderHome from '../components/HomeComponents/HeaderHome';
 
+
 function Homepage() {
-  const games = useLoaderData();
+  const { games ,carouselGames } = useLoaderData();
 
   return (
     <>
-      <HeaderHome games={games}/>
+      <HeaderHome games={carouselGames}/>
 
       <GameList>
         {games.map((game) => {

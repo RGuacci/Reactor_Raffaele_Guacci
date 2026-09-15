@@ -18,16 +18,16 @@ function HeaderHome({ games }) {
   }
 
   return (
-    <header className="relative w-full overflow-hidden">
+    <header className="relative w-full mx-auto overflow-hidden">
       <img
-        src={games[currentGame].background_image}
+        src={games[currentGame].screenshot}
         alt={games[currentGame].name}
-        className="w-full h-64 md:h-96 object-cover"
+        className="w-full h-64 md:h-80 object-cover"
       />
 
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end">
+      <div className="absolute inset-0 bg-black/40 flex items-end justify-center">
         <div className="p-6 md:p-10">
-          <h1 className="text-white text-3xl md:text-5xl font-bold">
+          <h1 className="text-white text-3xl md:text-5xl font-bold text-center font-electro">
             {games[currentGame].name}
           </h1>
         </div>
