@@ -1,16 +1,39 @@
-# React + Vite
+# Reactor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reactor è una web application dedicata ai videogiochi, sviluppata con React.
 
-Currently, two official plugins are available:
+Il progetto permette di consultare i videogiochi disponibili, cercarli, filtrarli per genere e visualizzarne i dettagli. Gli utenti autenticati possono inoltre gestire il proprio profilo, caricare un avatar, salvare giochi tra i preferiti e lasciare recensioni.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologie utilizzate
 
-## React Compiler
+- React
+- React Router
+- Tailwind CSS
+- DaisyUI
+- React Hook Form
+- Supabase
+- RAWG API
+- Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funzionalità
 
-## Expanding the ESLint configuration
+- Visualizzazione dei videogiochi
+- Ricerca videogiochi
+- Filtro per genere
+- Pagina di dettaglio del videogioco
+- Registrazione e login
+- Gestione del profilo
+- Modifica dei dati personali
+- Upload dell'avatar
+- Gestione dei preferiti
+- Visualizzazione e inserimento delle recensioni
+- Interfaccia responsive
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installazione
+
+Clona il repository e installa le dipendenze:
+
+
+Autore
+
+Raffaele Guacci
