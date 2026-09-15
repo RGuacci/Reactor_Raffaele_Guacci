@@ -2,20 +2,21 @@ import { Link } from "react-router";
 
 function GameCard({ game }) {
   return (
-    <>
-      <div className="aspect-video overflow-hidden relative">
-        <Link to={`details/${game.id}`}>
+    <div className="card bg-base-100 shadow-sm">
+      <Link to={`details/${game.id}`}>
+        <figure>
           <img
-            src={`${game.background_image}`}
-            className="w-full h-full brightness-50"
-            alt="An image of the game in the card"
+            src={game.background_image}
+            alt={game.name}
+            className="w-full aspect-video object-cover brightness-50 rounded-t-box"
           />
-        </Link>
-        <p className="absolute bottom-px w-full text-center text-white">
-          {game.name}
-        </p>
-      </div>
-    </>
+        </figure>
+
+        <div className="card-body p-3 md:p-4">
+          <h2 className="card-title text-base md:text-lg">{game.name}</h2>
+        </div>
+      </Link>
+    </div>
   );
 }
 

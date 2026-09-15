@@ -1,13 +1,13 @@
-import GameCard from './GameCard';
+import GameCard from "./GameCard";
 
-function GameList ({ children }){
+function GameList({ children }) {
   return (
-    <>
-      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+    <main className="max-w-7xl mx-auto px-6 md:px-10 py-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {children}
-      </main>
-    </>
-  )
+      </div>
+    </main>
+  );
 }
 
 GameList.Card = GameCard;
